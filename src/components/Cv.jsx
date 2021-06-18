@@ -25,69 +25,101 @@ class CvLayout extends Component {
                   </div>
                 </div>
 
-                <div className="mt-0 m-1 ">
-                  <div className="m-1 me-3 mt-0 p-1">
-                    <p className="card-title">Skills:</p>
-                    <div className="card-text container m-0">
-                      <p>{this.props.state.skills.join(", ")}</p>
-                    </div>
-                  </div>
-                </div>
+                {(() => {
+                  if (this.props.state.skills.length === 0) {
+                    return <div></div>;
+                  } else {
+                    return (
+                      <div className="mt-0 m-1 ">
+                        <div className="m-1 me-3 mt-0 p-1">
+                          <p className="card-title">Skills:</p>
+                          <div className="card-text container m-0">
+                            <p>{this.props.state.skills.join(", ")}</p>
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  }
+                })()}
 
-                <div className="m-1 p-1">
-                  <div className="m-1 me-3 mt-0 p-1">
-                    <p className="card-title">Education:</p>
-                    <div className="row">
-                      {this.props.state.education.map((item) => {
-                        return (
-                          <div className="col-12">
-                            <div className="">
-                              <p className="card-title m-1 mb-0">
-                                • {item.school}
-                                <span className="ms-2 p-0">
-                                  {`(${item.schoolStart.substring(
-                                    0,
-                                    4
-                                  )} - ${item.schoolEnd.substring(0, 4)})`}
-                                </span>
-                              </p>
-                              <div className="m-2 ms-4">
-                                <p className="m-0 p-0">Focus: {item.subject}</p>
-                              </div>
-                            </div>
+                {(() => {
+                  if (this.props.state.education.length === 0) {
+                    return <div></div>;
+                  } else {
+                    return (
+                      <div className="m-1 p-1">
+                        <div className="m-1 me-3 mt-0 p-1">
+                          <p className="card-title">Education:</p>
+                          <div className="row">
+                            {this.props.state.education.map((item) => {
+                              return (
+                                <div className="col-12">
+                                  <div className="">
+                                    <p className="card-title m-1 mb-0">
+                                      • {item.school}
+                                      <span className="ms-2 p-0">
+                                        {`(${item.schoolStart.substring(
+                                          0,
+                                          4
+                                        )} - ${item.schoolEnd.substring(
+                                          0,
+                                          4
+                                        )})`}
+                                      </span>
+                                    </p>
+                                    <div className="m-2 ms-4">
+                                      <p className="m-0 p-0">
+                                        Focus: {item.subject}
+                                      </p>
+                                    </div>
+                                  </div>
+                                </div>
+                              );
+                            })}
                           </div>
-                        );
-                      })}
-                    </div>
-                  </div>
-                </div>
-                <div className="m-1 p-1">
-                  <div className="m-1 me-3 mt-0 p-1">
-                    <p className="card-title">Work History:</p>
-                    <div className="row">
-                      {this.props.state.jobs.map((item) => {
-                        return (
-                          <div className="col-12">
-                            <div className="">
-                              <p className="card-title m-1 mb-0">
-                                • {item.work}
-                                <span className="ms-2 p-0">
-                                  {`(${item.workStart.substring(
-                                    0,
-                                    4
-                                  )} - ${item.workEnd.substring(0, 4)})`}
-                                </span>
-                              </p>
-                              <div className="m-2 ms-4">
-                                <p className="m-0 p-0">Title: {item.role}</p>
-                              </div>
-                            </div>
+                        </div>
+                      </div>
+                    );
+                  }
+                })()}
+
+                {(() => {
+                  if (this.props.state.jobs.length === 0) {
+                    return <div></div>;
+                  } else {
+                    return (
+                      <div className="m-1 p-1">
+                        <div className="m-1 me-3 mt-0 p-1">
+                          <p className="card-title">Work History:</p>
+                          <div className="row">
+                            {this.props.state.jobs.map((item) => {
+                              return (
+                                <div className="col-12">
+                                  <div className="">
+                                    <p className="card-title m-1 mb-0">
+                                      • {item.work}
+                                      <span className="ms-2 p-0">
+                                        {`(${item.workStart.substring(
+                                          0,
+                                          4
+                                        )} - ${item.workEnd.substring(0, 4)})`}
+                                      </span>
+                                    </p>
+                                    <div className="m-2 ms-4">
+                                      <p className="m-0 p-0">
+                                        Title: {item.role}
+                                      </p>
+                                    </div>
+                                  </div>
+                                </div>
+                              );
+                            })}
                           </div>
-                        );
-                      })}
-                    </div>
-                  </div>
-                </div>
+                        </div>
+                      </div>
+                    );
+                  }
+                })()}
               </div>
             </div>
           </div>
