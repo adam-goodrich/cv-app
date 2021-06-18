@@ -345,55 +345,60 @@ class App extends Component {
 
   render() {
     return (
-      <div className="container" id="top">
+      <div className="m-3" id="top">
         <Navbar
           resetForm={this.resetForm}
           state={this.state}
           printDiv={this.printDiv}
         />
-        <CvLayout state={this.state} />
-
-        <Name
-          handleNameChange={this.handleNameChange}
-          handleEmailChange={this.handleEmailChange}
-          handlePhoneChange={this.handlePhoneChange}
-          addName={this.addName}
-          editName={this.editName}
-          state={this.state}
-        />
-        <AboutMe
-          handleAboutChange={this.handleAboutChange}
-          aboutMe={this.aboutMe}
-          editAbout={this.editAbout}
-          state={this.state}
-        />
-        <Skills
-          addSkill={this.addSkill}
-          deleteSkill={this.deleteSkill}
-          state={this.state}
-        />
-        <Education
-          handleSchoolChange={this.handleSchoolChange}
-          handleSubjectChange={this.handleSubjectChange}
-          handleSchoolStartChange={this.handleSchoolStartChange}
-          handleSchoolEndChange={this.handleSchoolEndChange}
-          addSchool={this.addSchool}
-          editSchool={this.editSchool}
-          deleteSchool={this.deleteSchool}
-          updateSchool={this.updateSchool}
-          state={this.state}
-        />
-        <Work
-          handleWorkChange={this.handleWorkChange}
-          handleroleChange={this.handleroleChange}
-          handleWorkStartChange={this.handleWorkStartChange}
-          handleWorkEndChange={this.handleWorkEndChange}
-          addWork={this.addWork}
-          editWork={this.editWork}
-          deleteWork={this.deleteWork}
-          updateWork={this.updateWork}
-          state={this.state}
-        />
+        <div className="row">
+          <div className="col-12 col-xl-6">
+            <Name
+              handleNameChange={this.handleNameChange}
+              handleEmailChange={this.handleEmailChange}
+              handlePhoneChange={this.handlePhoneChange}
+              addName={this.addName}
+              editName={this.editName}
+              state={this.state}
+            />
+            <AboutMe
+              handleAboutChange={this.handleAboutChange}
+              aboutMe={this.aboutMe}
+              editAbout={this.editAbout}
+              state={this.state}
+            />
+            <Skills
+              addSkill={this.addSkill}
+              deleteSkill={this.deleteSkill}
+              state={this.state}
+            />
+            <Education
+              handleSchoolChange={this.handleSchoolChange}
+              handleSubjectChange={this.handleSubjectChange}
+              handleSchoolStartChange={this.handleSchoolStartChange}
+              handleSchoolEndChange={this.handleSchoolEndChange}
+              addSchool={this.addSchool}
+              editSchool={this.editSchool}
+              deleteSchool={this.deleteSchool}
+              updateSchool={this.updateSchool}
+              state={this.state}
+            />
+            <Work
+              handleWorkChange={this.handleWorkChange}
+              handleroleChange={this.handleroleChange}
+              handleWorkStartChange={this.handleWorkStartChange}
+              handleWorkEndChange={this.handleWorkEndChange}
+              addWork={this.addWork}
+              editWork={this.editWork}
+              deleteWork={this.deleteWork}
+              updateWork={this.updateWork}
+              state={this.state}
+            />
+          </div>
+          <div className="col-12 col-xl-6">
+            <CvLayout state={this.state} />
+          </div>
+        </div>
       </div>
     );
   }

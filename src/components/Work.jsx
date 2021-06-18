@@ -102,17 +102,17 @@ class Work extends Component {
                             </p>
                             <button
                               type="submit"
-                              className="btn btn-warning m-2 mb-3"
+                              className="btn btn-warning btn-sm  mb-3 me-1"
                               onClick={() => this.props.editWork(index)}
                             >
-                              Edit Job
+                              Edit
                             </button>
                             <button
                               type="submit"
-                              className="btn btn-danger m-2 mb-3"
+                              className="btn btn-danger btn-sm mb-3 "
                               onClick={() => this.props.deleteWork(index)}
                             >
-                              Delete Job
+                              Delete
                             </button>
                           </div>
                         </div>

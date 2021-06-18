@@ -30,7 +30,7 @@ class Navbar extends Component {
                   <button
                     type="button btn-block"
                     className="btn btn-success m-2"
-                    onClick={() => this.props.printDiv("printableArea")}
+                    onClick={() => this.props.printDiv("print-area")}
                   >
                     Save
                   </button>

@@ -6,7 +6,7 @@ class Education extends Component {
       return (
         <div className="card m-3" id="accordionExample">
           <h2 className="card-header " id="headingFour">
-            Education <p className="fs-6 m-">(most recent first)</p>
+            Education <p className="fs-6 m-2">(most recent first)</p>
           </h2>
           <div
             id="collapseFour"
@@ -102,17 +102,17 @@ class Education extends Component {
                             </p>
                             <button
                               type="submit"
-                              className="btn btn-warning m-2 mb-3"
+                              className="btn btn-warning btn-sm me-1  mb-3"
                               onClick={() => this.props.editSchool(index)}
                             >
-                              Edit Education
+                              Edit
                             </button>
                             <button
                               type="submit"
-                              className="btn btn-danger m-2 mb-3"
+                              className="btn btn-danger btn-sm  mb-3"
                               onClick={() => this.props.deleteSchool(index)}
                             >
-                              Delete Education
+                              Delete
                             </button>
                           </div>
                         </div>
