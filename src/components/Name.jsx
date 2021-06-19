@@ -5,56 +5,56 @@ class Name extends Component {
     if (this.props.state.editNameMode) {
       return (
         <div className="card m-3">
-          <h3 className=" card-header" id="headingOne">
+          <h3 className="card-header" id="headingOne">
             Personal Information
           </h3>
           <div className="card-body" aria-labelledby="headingOne">
-            <div className="container">
+            <form
+              className="container needs-validation"
+              onSubmit={this.props.addName}
+            >
               <div className="container input-group mb-3 mt-3">
-                <span className="input-group-text" id="basic-addon1">
-                  Name:
-                </span>
+                <label className="input-group-text">First name</label>
                 <input
                   type="text"
                   className="form-control"
                   id="nameBox"
                   value={this.props.state.name}
                   onChange={this.props.handleNameChange}
+                  required
                 />
               </div>
               <div className="container input-group mb-3">
-                <span className="input-group-text" id="basic-addon1">
+                <label className="input-group-text" id="basic-addon1">
                   Email:
-                </span>
+                </label>
                 <input
                   type="email"
                   className="form-control"
                   id="emailBox"
                   value={this.props.state.email}
                   onChange={this.props.handleEmailChange}
+                  required
                 />
               </div>
               <div className="container input-group mb-3">
-                <span className="input-group-text" id="basic-addon1">
+                <label className="input-group-text" id="basic-addon1">
                   Phone:
-                </span>
+                </label>
                 <input
                   type="text"
                   className="form-control"
                   id="phoneBox"
                   value={this.props.state.phone}
                   onChange={this.props.handlePhoneChange}
+                  required
                 />
               </div>
 
-              <button
-                type="submit"
-                className="btn btn-primary m-2 mb-3"
-                onClick={this.props.addName}
-              >
+              <button type="submit" className="btn btn-primary m-2 mb-3">
                 Submit
               </button>
-            </div>
+            </form>
           </div>
         </div>
       );

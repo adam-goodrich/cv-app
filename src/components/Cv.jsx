@@ -51,9 +51,9 @@ class CvLayout extends Component {
                         <div className="m-1 me-3 mt-0 p-1">
                           <p className="card-title">Education:</p>
                           <div className="row">
-                            {this.props.state.education.map((item) => {
+                            {this.props.state.education.map((item, index) => {
                               return (
-                                <div className="col-12">
+                                <div key={`cve-${index}`} className="col-12">
                                   <div className="">
                                     <p className="card-title m-1 mb-0">
                                       • {item.school}
@@ -92,9 +92,9 @@ class CvLayout extends Component {
                         <div className="m-1 me-3 mt-0 p-1">
                           <p className="card-title">Work History:</p>
                           <div className="row">
-                            {this.props.state.jobs.map((item) => {
+                            {this.props.state.jobs.map((item, index) => {
                               return (
-                                <div className="col-12">
+                                <div key={`cvw-${index}`} className="col-12">
                                   <div className="">
                                     <p className="card-title m-1 mb-0">
                                       • {item.work}

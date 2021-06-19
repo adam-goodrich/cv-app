@@ -13,7 +13,7 @@ class Education extends Component {
             className="card-body"
             aria-labelledby="headingFour"
           >
-            <div className="container">
+            <form className="container" onSubmit={this.props.updateSchool}>
               <div className="container input-group mb-1 mt-1">
                 <span className="input-group-text" id="basic-addon1">
                   Institution Name:
@@ -24,6 +24,7 @@ class Education extends Component {
                   id="schoolBox"
                   value={this.props.state.school}
                   onChange={this.props.handleSchoolChange}
+                  required
                 />
               </div>
               <div className="container input-group mb-3 mt-3">
@@ -36,6 +37,7 @@ class Education extends Component {
                   id="studyBox"
                   value={this.props.state.subject}
                   onChange={this.props.handleSubjectChange}
+                  required
                 />
               </div>
               <div className="container input-group mb-3 mt-3">
@@ -48,6 +50,7 @@ class Education extends Component {
                   id="educationStartBox"
                   value={this.props.state.schoolStart}
                   onChange={this.props.handleSchoolStartChange}
+                  required
                 />
               </div>
               <div className="container input-group mb-3 mt-3">
@@ -60,16 +63,13 @@ class Education extends Component {
                   id="educationEndBox"
                   value={this.props.state.schoolEnd}
                   onChange={this.props.handleSchoolEndChange}
+                  required
                 />
               </div>
-              <button
-                type="submit"
-                className="btn btn-primary m-2 mb-3"
-                onClick={this.props.updateSchool}
-              >
+              <button type="submit" className="btn btn-primary m-2 mb-3">
                 Update Education
               </button>
-            </div>
+            </form>
           </div>
         </div>
       );
@@ -89,7 +89,7 @@ class Education extends Component {
                 <div className="row">
                   {this.props.state.education.map((item, index) => {
                     return (
-                      <div className="col-lg-4">
+                      <div key={`education-${index}`} className="col-lg-4">
                         <div className="card m-1">
                           <div className="card-body">
                             <p>{item.school}</p>
@@ -121,62 +121,63 @@ class Education extends Component {
                   })}
                 </div>
               </div>
-
-              <div className="container input-group mb-3 mt-3">
-                <span className="input-group-text" id="basic-addon1">
-                  Institution Name:
-                </span>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="schoolBox"
-                  value={this.props.state.school}
-                  onChange={this.props.handleSchoolChange}
-                />
-              </div>
-              <div className="container input-group mb-3 mt-3">
-                <span className="input-group-text" id="basic-addon1">
-                  Study Focus:
-                </span>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="studyBox"
-                  value={this.props.state.subject}
-                  onChange={this.props.handleSubjectChange}
-                />
-              </div>
-              <div className="container input-group mb-3 mt-3">
-                <span className="input-group-text" id="basic-addon1">
-                  Start Date:
-                </span>
-                <input
-                  type="date"
-                  className="form-control"
-                  id="educationStartBox"
-                  value={this.props.state.schoolStart}
-                  onChange={this.props.handleSchoolStartChange}
-                />
-              </div>
-              <div className="container input-group mb-3 mt-3">
-                <span className="input-group-text" id="basic-addon1">
-                  End Date:
-                </span>
-                <input
-                  type="date"
-                  className="form-control"
-                  id="educationEndBox"
-                  value={this.props.state.schoolEnd}
-                  onChange={this.props.handleSchoolEndChange}
-                />
-              </div>
-              <button
-                type="submit"
-                className="btn btn-primary m-2 mb-3"
-                onClick={this.props.addSchool}
-              >
-                Add Education
-              </button>
+              <form onSubmit={this.props.addSchool}>
+                <div className="container input-group mb-3 mt-3">
+                  <span className="input-group-text" id="basic-addon1">
+                    Institution Name:
+                  </span>
+                  <input
+                    type="text"
+                    className="form-control"
+                    id="schoolBox"
+                    value={this.props.state.school}
+                    onChange={this.props.handleSchoolChange}
+                    required
+                  />
+                </div>
+                <div className="container input-group mb-3 mt-3">
+                  <span className="input-group-text" id="basic-addon1">
+                    Study Focus:
+                  </span>
+                  <input
+                    type="text"
+                    className="form-control"
+                    id="studyBox"
+                    value={this.props.state.subject}
+                    onChange={this.props.handleSubjectChange}
+                    required
+                  />
+                </div>
+                <div className="container input-group mb-3 mt-3">
+                  <span className="input-group-text" id="basic-addon1">
+                    Start Date:
+                  </span>
+                  <input
+                    type="date"
+                    className="form-control"
+                    id="educationStartBox"
+                    value={this.props.state.schoolStart}
+                    onChange={this.props.handleSchoolStartChange}
+                    required
+                  />
+                </div>
+                <div className="container input-group mb-3 mt-3">
+                  <span className="input-group-text" id="basic-addon1">
+                    End Date:
+                  </span>
+                  <input
+                    type="date"
+                    className="form-control"
+                    id="educationEndBox"
+                    value={this.props.state.schoolEnd}
+                    onChange={this.props.handleSchoolEndChange}
+                    required
+                  />
+                </div>
+                <button type="submit" className="btn btn-primary m-2 mb-3">
+                  Add Education
+                </button>
+              </form>
             </div>
           </div>
         </div>

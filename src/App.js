@@ -135,7 +135,8 @@ class App extends Component {
     this.setState({ editAboutMode: true });
   }
 
-  addSkill() {
+  addSkill(e) {
+    e.preventDefault();
     const skillBox = document.getElementById("skillBox");
     let skillValue = skillBox.value;
     let skilllist = this.state.skills;
@@ -166,7 +167,9 @@ class App extends Component {
     this.setState({ schoolEnd: event.target.value });
   }
 
-  addSchool() {
+  addSchool(e) {
+    e.preventDefault();
+
     const schoolObject = {
       school: this.state.school,
       subject: this.state.subject,
@@ -243,7 +246,9 @@ class App extends Component {
     this.setState({ workEnd: event.target.value });
   }
 
-  addWork() {
+  addWork(e) {
+    e.preventDefault();
+
     const WorkObject = {
       work: this.state.work,
       role: this.state.role,
@@ -352,7 +357,7 @@ class App extends Component {
           printDiv={this.printDiv}
         />
         <div className="row">
-          <div className="col-12 col-xl-6">
+          <div className="col-12 col-xxl-6">
             <Name
               handleNameChange={this.handleNameChange}
               handleEmailChange={this.handleEmailChange}
@@ -395,7 +400,7 @@ class App extends Component {
               state={this.state}
             />
           </div>
-          <div className="col-12 col-xl-6">
+          <div className="col-12 col-xxl-6">
             <CvLayout state={this.state} />
           </div>
         </div>

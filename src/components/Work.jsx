@@ -13,7 +13,7 @@ class Work extends Component {
             className="card-body"
             aria-labelledby="headingFour"
           >
-            <div className="container">
+            <form className="container" onSubmit={this.props.updateWork}>
               <div className="container input-group mb-3 mt-3">
                 <span className="input-group-text" id="basic-addon1">
                   Company Name:
@@ -24,6 +24,7 @@ class Work extends Component {
                   id="schoolBox"
                   value={this.props.state.work}
                   onChange={this.props.handleWorkChange}
+                  required
                 />
               </div>
               <div className="container input-group mb-3 mt-3">
@@ -36,6 +37,7 @@ class Work extends Component {
                   id="studyBox"
                   value={this.props.state.role}
                   onChange={this.props.handleroleChange}
+                  required
                 />
               </div>
               <div className="container input-group mb-3 mt-3">
@@ -48,6 +50,7 @@ class Work extends Component {
                   id="educationStartBox"
                   value={this.props.state.workStart}
                   onChange={this.props.handleWorkStartChange}
+                  required
                 />
               </div>
               <div className="container input-group mb-3 mt-3">
@@ -60,16 +63,13 @@ class Work extends Component {
                   id="educationEndBox"
                   value={this.props.state.workEnd}
                   onChange={this.props.handleWorkEndChange}
+                  required
                 />
               </div>
-              <button
-                type="submit"
-                className="btn btn-primary m-2 mb-3"
-                onClick={this.props.updateWork}
-              >
+              <button type="submit" className="btn btn-primary m-2 mb-3">
                 Update Job
               </button>
-            </div>
+            </form>
           </div>
         </div>
       );
@@ -89,7 +89,7 @@ class Work extends Component {
                 <div className="row">
                   {this.props.state.jobs.map((item, index) => {
                     return (
-                      <div className="col-lg-4">
+                      <div key={`work-${index}`} className="col-lg-4">
                         <div className="card m-1">
                           <div className="card-body">
                             <p>{item.work}</p>
@@ -121,62 +121,63 @@ class Work extends Component {
                   })}
                 </div>
               </div>
-
-              <div className="container input-group mb-3 mt-3">
-                <span className="input-group-text" id="basic-addon1">
-                  Company Name:
-                </span>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="schoolBox"
-                  value={this.props.state.work}
-                  onChange={this.props.handleWorkChange}
-                />
-              </div>
-              <div className="container input-group mb-3 mt-3">
-                <span className="input-group-text" id="basic-addon1">
-                  Role:
-                </span>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="studyBox"
-                  value={this.props.state.role}
-                  onChange={this.props.handleroleChange}
-                />
-              </div>
-              <div className="container input-group mb-3 mt-3">
-                <span className="input-group-text" id="basic-addon1">
-                  Start Date:
-                </span>
-                <input
-                  type="date"
-                  className="form-control"
-                  id="educationStartBox"
-                  value={this.props.state.workStart}
-                  onChange={this.props.handleWorkStartChange}
-                />
-              </div>
-              <div className="container input-group mb-3 mt-3">
-                <span className="input-group-text" id="basic-addon1">
-                  End Date:
-                </span>
-                <input
-                  type="date"
-                  className="form-control"
-                  id="educationEndBox"
-                  value={this.props.state.workEnd}
-                  onChange={this.props.handleWorkEndChange}
-                />
-              </div>
-              <button
-                type="submit"
-                className="btn btn-primary m-2 mb-3"
-                onClick={this.props.addWork}
-              >
-                Add Job
-              </button>
+              <form onSubmit={this.props.addWork}>
+                <div className="container input-group mb-3 mt-3">
+                  <span className="input-group-text" id="basic-addon1">
+                    Company Name:
+                  </span>
+                  <input
+                    type="text"
+                    className="form-control"
+                    id="schoolBox"
+                    value={this.props.state.work}
+                    onChange={this.props.handleWorkChange}
+                    required
+                  />
+                </div>
+                <div className="container input-group mb-3 mt-3">
+                  <span className="input-group-text" id="basic-addon1">
+                    Role:
+                  </span>
+                  <input
+                    type="text"
+                    className="form-control"
+                    id="studyBox"
+                    value={this.props.state.role}
+                    onChange={this.props.handleroleChange}
+                    required
+                  />
+                </div>
+                <div className="container input-group mb-3 mt-3">
+                  <span className="input-group-text" id="basic-addon1">
+                    Start Date:
+                  </span>
+                  <input
+                    type="date"
+                    className="form-control"
+                    id="educationStartBox"
+                    value={this.props.state.workStart}
+                    onChange={this.props.handleWorkStartChange}
+                    required
+                  />
+                </div>
+                <div className="container input-group mb-3 mt-3">
+                  <span className="input-group-text" id="basic-addon1">
+                    End Date:
+                  </span>
+                  <input
+                    type="date"
+                    className="form-control"
+                    id="educationEndBox"
+                    value={this.props.state.workEnd}
+                    onChange={this.props.handleWorkEndChange}
+                    required
+                  />
+                </div>
+                <button type="submit" className="btn btn-primary m-2 mb-3">
+                  Add Job
+                </button>
+              </form>
             </div>
           </div>
         </div>

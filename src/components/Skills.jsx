@@ -32,20 +32,26 @@ class Skills extends Component {
                 );
               })}
             </div>
-
-            <div className=" container input-group mb-3 mt-3">
-              <span className="input-group-text" id="basic-addon1">
-                Skill:
-              </span>
-              <input type="text" className="form-control" id="skillBox" />
-            </div>
-            <button
-              type="submit"
-              className="btn btn-primary m-2 mb-3"
-              onClick={this.props.addSkill}
-            >
-              Add Skill
-            </button>
+            <form onSubmit={this.props.addSkill}>
+              <div className=" container input-group mb-3 mt-3">
+                <span className="input-group-text" id="basic-addon1">
+                  Skill:
+                </span>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="skillBox"
+                  required
+                />
+              </div>
+              <button
+                type="submit"
+                className="btn btn-primary m-2 mb-3"
+                // onClick={this.props.addSkill}
+              >
+                Add Skill
+              </button>
+            </form>
           </div>
         </div>
       </div>

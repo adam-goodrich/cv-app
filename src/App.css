@@ -6,7 +6,7 @@
   box-shadow: 0 0 0.5cm rgba(0, 0, 0, 0.5);
   aspect-ratio: 1 / 1.414;
   height: 29.7cm;
-  max-width: 95vw;
+  max-width: 80vw;
 }
 
 @media print {
