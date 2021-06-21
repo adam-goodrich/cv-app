@@ -89,7 +89,7 @@ class Work extends Component {
                 <div className="row">
                   {this.props.state.jobs.map((item, index) => {
                     return (
-                      <div key={`work-${index}`} className="col-lg-4">
+                      <div key={`work-${index}`} className="col-lg-6">
                         <div className="card m-1">
                           <div className="card-body">
                             <p>{item.work}</p>
@@ -124,7 +124,7 @@ class Work extends Component {
               <form onSubmit={this.props.addWork}>
                 <div className="container input-group mb-3 mt-3">
                   <span className="input-group-text" id="basic-addon1">
-                    Company Name:
+                    Company:
                   </span>
                   <input
                     type="text"

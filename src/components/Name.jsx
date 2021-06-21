@@ -14,7 +14,7 @@ class Name extends Component {
               onSubmit={this.props.addName}
             >
               <div className="container input-group mb-3 mt-3">
-                <label className="input-group-text">First name</label>
+                <label className="input-group-text">Name</label>
                 <input
                   type="text"
                   className="form-control"

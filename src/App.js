@@ -357,7 +357,7 @@ class App extends Component {
           printDiv={this.printDiv}
         />
         <div className="row">
-          <div className="col-12 col-xxl-6">
+          <div className="col-12 col-xxl-5">
             <Name
               handleNameChange={this.handleNameChange}
               handleEmailChange={this.handleEmailChange}
@@ -400,7 +400,7 @@ class App extends Component {
               state={this.state}
             />
           </div>
-          <div className="col-12 col-xxl-6">
+          <div className="col-12 col-xxl-7">
             <CvLayout state={this.state} />
           </div>
         </div>

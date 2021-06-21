@@ -89,7 +89,7 @@ class Education extends Component {
                 <div className="row">
                   {this.props.state.education.map((item, index) => {
                     return (
-                      <div key={`education-${index}`} className="col-lg-4">
+                      <div key={`education-${index}`} className="col-lg-6">
                         <div className="card m-1">
                           <div className="card-body">
                             <p>{item.school}</p>
@@ -124,7 +124,7 @@ class Education extends Component {
               <form onSubmit={this.props.addSchool}>
                 <div className="container input-group mb-3 mt-3">
                   <span className="input-group-text" id="basic-addon1">
-                    Institution Name:
+                    Institution:
                   </span>
                   <input
                     type="text"

@@ -6,7 +6,13 @@
   box-shadow: 0 0 0.5cm rgba(0, 0, 0, 0.5);
   aspect-ratio: 1 / 1.414;
   height: 29.7cm;
-  max-width: 80vw;
+  max-width: 75vw;
+}
+
+@media only screen and (max-width: 768px) {
+  .page {
+    display: none;
+  }
 }
 
 @media print {
