@@ -310,7 +310,7 @@ class App extends Component {
   }
 
   printDiv(divName) {
-    var mywindow = window.open("", "PRINT");
+    var mywindow = window.open("", "PRINT", "height=400,width=600");
 
     mywindow.document.write(
       "<html><head><title>" + document.title + "</title>"
